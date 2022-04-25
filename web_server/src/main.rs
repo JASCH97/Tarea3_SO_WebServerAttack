@@ -51,6 +51,9 @@ fn handle_requests(mut stream: TcpStream, files_path: String) {
     let get = b"GET / HTTP/1.1\r\n";
     let sleep = b"GET /sleep HTTP/1.1\r\n";
     let post = b"GET /post HTTP/1.1\r\n";
+    let delete = b"GET /delete HTTP/1.1\r\n";
+    let head = b"GET /head HTTP/1.1\r\n";
+    let put = b"GET /put HTTP/1.1\r\n";
     
     let (status_line, filename) = if buffer.starts_with(get) {
         ("HTTP/1.1 200 OK", files_path + "/helloWorld.html")
@@ -59,7 +62,14 @@ fn handle_requests(mut stream: TcpStream, files_path: String) {
         ("HTTP/1.1 200 OK", files_path + "/helloWorld.html")
     } else if buffer.starts_with(post) {
         ("HTTP/1.1 200 OK", files_path + "/helloWorld.html")
-    } else {
+        
+    } else if buffer.starts_with(delete) {
+        ("HTTP/1.1 200 OK", files_path + "/helloWorld.html")
+    }else if buffer.starts_with(head) {
+        ("HTTP/1.1 200 OK", files_path + "/helloWorld.html")
+    }else if buffer.starts_with(put) {
+        ("HTTP/1.1 200 OK", files_path + "/helloWorld.html")
+    }else {
         ("HTTP/1.1 404 NOT FOUND", files_path + "/error404.html")
     };
 
