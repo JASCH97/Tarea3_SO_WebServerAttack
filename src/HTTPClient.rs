@@ -23,7 +23,7 @@ pub fn main(){
   println!("{}",args[i]);
   if args[i] == "get"{
      let mut puerto = "3000";
-     let mut archivo = "holamundo.html";
+     let mut archivo = &args[3];
      //genera un request tipo get al servidor en el puerto dado
      if args.len() > i+2{
        let puerto:&str = &args[i+1];
