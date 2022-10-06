@@ -1,0 +1,13 @@
+prefix=/home/tinky-winky/Documents/Salvadinha SO/web-server-attack/web-server-atack/target/debug/build/libz-sys-35c772496e520aac/out
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+sharedlibdir=@sharedlibdir@
+includedir=@includedir@
+
+Name: zlib
+Description: zlib compression library
+Version: @VERSION@
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

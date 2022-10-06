@@ -1,0 +1,22 @@
+[package]
+name = "web-server-atack"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "HTTPClient"
+path = "src/HTTPClient.rs"
+
+[[bin]]
+name = "prethread-webserver"
+path = "src/prethread-webserver.rs"
+ 
+[[bin]]
+name = "preforked-webserver"
+path = "src/preforked-webserver.rs"
+
+[dependencies]
+curl = "0.4.43"
+reqwest = "0.11.10"
